@@ -1,0 +1,28 @@
+{% include 'header.html' %}
+<body class="bg-dark">
+    <h5 class="display-5 text-light">Agregar empleado</h5>
+<hr style="color: white;">
+<div class="container text-light rounded" style="background-color: #273746;">
+    <br>
+            <form action="/store" method="post" enctype="multipart/form-data">
+                    <h1>Datos personales</h1>
+                    <hr>
+                        <label class="form-label"><i class="bi bi-postcard"></i> Nombre</label>
+                        <input style="width: 95%;" type="text" class="form-control mx-auto " placeholder="Nombre apellidos" name="txtNombre" id="txtNombre">
+                        <br>
+                        <label class="form-label"><i class="bi bi-envelope"></i>  Correo</label>
+                        <input style="width: 95%;" type="email" class="form-control mx-auto" id="txtCorreo" name="txtCorreo" placeholder="ejemplo@correo.com">
+                        <br>
+
+                        <label class="form-label"><i class="bi bi-file-earmark-person"></i> Foto</label>
+                        <br>
+                        <input style="width: 95%;" class="form-control mx-auto" type="file" name="txtFoto" id="txtFoto">
+                        <br><hr>
+                    <div class="col-auto p-1 mx-auto">
+                        <a class="btn btn-danger" href="/">Cancelar</a>
+                        <input class="btn btn-success" href="{{url_for('index')}}" type="submit" value="Agregar empleado">
+                    </div>
+            </form>
+    <br>
+</div>
+{% include 'footer.html' %}

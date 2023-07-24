@@ -1,0 +1,31 @@
+{% include 'header.html' %}
+{% for item in empleado %}
+<body class="bg-dark">
+<h5 class="display-5 text-light">Editar empleado</h5>
+<hr style="color: white;">
+<div class="container text-light rounded mx-auto" style="background-color: #273746;">
+    <br>
+    <form action="/update" method="post" enctype="multipart/form-data">
+        <h1>Datos personales</h1>
+                <hr>
+                <input type="hidden" name="txtId" id="txtId" value="{{item[0]}}">
+                <label class="form-label"><i class="bi bi-postcard"></i> Nombre</label>
+                <input style="width: 95%;" type="text" class="form-control mx-auto" name="txtNombre" id="txtNombre" value="{{item[1]}}">
+                <br>
+                <label class="form-label"><i class="bi bi-envelope"></i>  Correo</label>
+                <input style="width: 95%;" type="email" class="form-control mx-auto" name="txtCorreo" id="txtCorreo" value="{{item[2]}}"">
+                <br>
+                <label class="form-label"><i class="bi bi-file-earmark-person"></i> Foto </label> ({{item[3]}})
+                <br>
+                <input style="width: 95%;" class="form-control mx-auto" type="file" name="txtFoto" id="txtFoto">
+                <br><hr>
+                <div class="col-auto p-1">
+                    <a class="btn btn-danger" href="/">Cancelar</a>
+                    <input class="btn btn-success" type="submit" value="Confirmar">
+                </div>
+                <br>
+        </div>
+    </form>
+
+{% endfor %}
+{% include 'footer.html' %}
